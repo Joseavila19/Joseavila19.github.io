@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html { font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);}
+
+body {
+  background: color white;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  
+  background-image: url(img1/bosque.jpg);
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  
+  
+}
+.Liquikiwi {
+  visibility: hidden;
+
+  height: 0px;
+}
+.contenedor {
+  width: 95%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  height: 100%;
+  /*grid-template-columns: repeat(3, 1fr);
+  /*grid-template-rows: repeat(4, auto);*/
+ 
+  grid-template-areas: "header header header"
+                   "contenido contenido sidebar"
+                   "widget-1  widget-2 none"
+                   "footer footer none";
+  
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+  padding: 20px;
+  border-radius: 10px;
+  
+}
+
+.contenedor .header {
+  background: #12203E;
+  font-weight: bold;
+  max-width: 85% ;
+  font-size: 20px;
+  color: white;
+  /*grid-column-start: 1;
+  grid-column-end: -1;*/
+  grid-area: header;
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+} 
+
+.contenedor .contenido {
+  /*grid-column: span 2;*/
+  grid-area: contenido;
+  font-style:italic;
+  font-size: 20px;
+  background: transparent;
+  color: black;
+  max-width: 90%;
+  overflow: hidden;
+} 
+.contenedor .parrafo {
+  color: black;
+  background: rgba(255, 255, 255, 0.76);
+  font-style: normal;
+  font-size: 25px;
+  border-radius: 5px;
+  padding: 10px;
+  width: auto;
+  overflow: hidden;
+}
+
+.social {
+  background: none;
+  width: 48px;
+  position: fixed;
+  top: 50px;
+  right: 0px;
+}
+.social {
+  top: 55%;
+  height: 105px;
+  margin-top: -100px;
+}
+
+.contenedor .sidebar {
+  grid-column: 3 / 4;
+  /*background: #fAA43D;*/
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  min-height: 200px;
+  /*grid-row: span 2;*/
+  grid-area: sidebar;
+}
+.contenedor .sidebar {
+  display: flex;
+  width: auto;
+  height: 100%;
+  background: black, rgb(167, 119, 31);
+  transition: all .5s ease; 
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:  wrap;
+  flex-direction: column;
+}
+.sidebar header {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  line-height: 50px;
+  text-align: start;
+  display: flex;
+  padding-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+
+  /* position: fixed;
+  top: 200px; */
+  /* top: 500px; */
+  /* background: #3f7a30; */
+  
+}
+.sidebar >div {
+  position: fixed;
+  top: -190px;
+  margin: 10px;
+  width: 100%;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0px;
+
+}
+.sidebar ul a{
+  display: flexbox;
+  text-decoration-line: none;
+  list-style: none;
+  height: 500px;
+  width: 200;
+  position:static;
+  line-height: 40px;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  position: top;
+  padding-left: 0px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+ul li:hover a{
+  padding-right: 10px;
+}
+
+
+
+.contenedor .widget-1,
+.contenedor .widget-2 {
+  /*background: #55a8fd;*/
+  color: #fff;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.contenedor .widget-1 {
+  grid-area: widget-1;
+
+  max-width: 100%;
+  background: chocolate;
+  background-image: url(img1/bosque1.jpg);
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  
+}
+
+.contenedor .widget-2 {
+  grid-area: widget-2;
+  max-width: 80%;
+  background: chocolate;
+  background-image: url(img1/bosque2.jpg);
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.contenedor .footer {
+  background: #12203e;
+  color: #fff;
+  width: 90%;
+  /*grid-column: span 3;*/
+  grid-area: footer;
+}
+
+@media screen and (max-width: 1000px){
+  .contenedor {
+    grid-template-areas: "header header header"
+                 "contenido contenido contenido"
+                   "sidebar sidebar sidebar"
+                   "widget-1 widget-2 widget-2"
+                   "footer footer social"
+      
+    }
+
+    .contenedor .header {
+      background: #12203E;
+      font-weight:100;
+      color: white;
+      max-width: 100%;
+    }
+  .contenedor .sidebar {
+    font: 0/0 a;
+    text-shadow: transparent;
+    color: transparent;
+    text-decoration: none;
+    width: 100%;
+    height: 500px;
+    background-image: url(img2/Wings.jpg);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+  }
+  aside >div {visibility: hidden
+  }
+  .contenedor .contenido {
+    background-image: url(img2/Portada1.jpg);
+    background-size: cover;
+    background-position: initial;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    min-width: 150px;
+    height: 200px;
+    font: 0/0 a;
+    text-shadow: transparent;
+    color: transparent;
+    text-decoration: none;
+    max-width: 100%;
+  }
+  .contenedor .parrafo {
+    color: transparent;
+    background: transparent;
+  } 
+  
+  .contenedor .widget-1 {
+    display:flex;
+    align-content: flex-end;
+    height: 200px;
+    width: 200px;
+
+    background-image: url(img2/Monster1.jpg);
+    background-size: cover;
+    background-position: center center;
+    grid-area: widget-1;
+
+
+  }
+  .contenedor .widget-2 {
+    height: 200px;
+    border-radius: 50%;
+    background-image: url(img2/Foto1.jpg);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    grid-area: widget-2;
+    width: 90%;
+    max-width: 100%;
+
+  }
+  .contenedor .footer {
+    width: 90%;
+    height: 30px;
+  }
+  .social {
+    display: inline-flex;
+    position: static;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: auto;
+    height: auto;
+    margin: 0px;
+    /*right: -250px;
+    position: auto;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+  }
+  body {
+    background-image: url(img2/Gatos.jpg);
+    background-color: transparent;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+
+  }
+
+  @media screen and (max-width: 600px){
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+  html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+  body {
+    grid-template-areas: body body body;
+    background: white;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    /* width: 600px; */
+    background-image: none;
+    height: 100%;
+    min-width: 300px;
+    width: 100%;
+    background-image: url none;
+    clear: right;
+    float: right;
+    margin: 10px 0px 10px 10px;
+    font-size: 90%;
+    margin-left: 0;
+    float: none;
+  }
+  .contenedor {
+    height: 0px;
+    visibility: hidden;
+  }
+  .Liquikiwi {
+    display: block;
+    box-sizing: border-box;
+    line-height: 1.5;
+    visibility: visible;
+    width: 100%;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+  }
+  .Liquikiwi > div > div.infobox-description {
+    font-weight: bold;
+    text-align: right;
+  }
+
+  .Liquikiwi > div > div.infobox-cell-2 {
+    width: 50%;
+  }
+  .Liquikiwi > div > div {
+    width: 100%;
+    float: left;
+    height: inherit;
+    padding: 5px;
+    }
+  .Liquikiwi .infobox-buttons {
+    float: right;
+    font-size: 60%;
+    font-weight: 500;
+  }
+  
+  .Liquikiwi .infobox-header {
+    background-color: #e6e6e6;
+    font-weight: 700;
+    text-align: center;
+    font-size: 155%;
+  }
+  .team-template-image-icon img {
+    max-width: 50px;
+    max-height: 25px;
+    width: auto;
+    height: auto;
+  }
+  
+  #Lyn {
+    padding: 20px;
+  }
+ 
+  .Liquikiwi > div {
+    display: table;
+    width: 100%;
+  }
+
+  .wiki-bordercolor-light, .bdc-light {
+    border-color: #cdcdcd;
+  }
+  .Liquikiwi > div > div.infobox-image:not(.infobox-fixed-size-image) img {    
+      width: 100%;
+      height: auto;
+  }
+  .Liquikiwi > div > div.infobox-center {
+    text-align: center;
+  }
+
+  .Liquikiwi > #Description {
+    background-color: #eeeeee;
+  }
+  .infobox-center .infobox-icons {
+    padding-top: 2px;
+  }
+
+  .lp-icon {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: middle;
+      width: 32px;
+      height: 32px;
+      background-image: url(img3/InfoboxIcon_Alert.png);
+      background-size: 32px 64px;
+      background-position: 0 -32px;
+    }
+    .lp-icon:hover {
+      background-position: 0 -64px;
+    }
+
+    .Liquikiwi >div .flag {
+      background-color: rgb(238, 238, 238);
+    }
+    .lp-icon.lp-twitter {
+      background-image: url(img3/InfoboxIcon_Twitter.png);
+    }
+
+    .lp-icon.lp-facebook {
+      background-image: url(img3/InfoboxIcon_Facebook.png);
+    }
+    .lp-icon.lp-instagram {
+      background-image: url(img3/InfoboxIcon_Instagram.png);
+    }
+  }
+}
