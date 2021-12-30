@@ -343,7 +343,7 @@ ul li:hover a{
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     /* width: 600px; */
-    background-image: none;
+    /*background-image: none;
     height: 100%;
     min-width: 300px;
     width: 100%;
